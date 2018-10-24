@@ -7,6 +7,8 @@ const AntdForm = Antd.Form;
 class Form extends Component {
   constructor(props) {
     super(props);
+    console.log('Antd', Antd);
+    console.log('AntdForm', AntdForm);
     const {
       onSubmit,
       preSubmit,
