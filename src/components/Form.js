@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
 import { FormContext } from '../Context';
 import FormController from '../Controller/FormController';
-// import Antd from 'antd';
-// const AntdForm = Antd.Form;
+import { Form } from 'antd';
 
-class Form extends Component {
+class InformedForm extends Component {
   constructor(props) {
     super(props);
-    console.log('Antd', Antd);
-    console.log('AntdForm', AntdForm);
+    // console.log('Antd', Antd);
+    // console.log('AntdForm', AntdForm);
     const {
       onSubmit,
       preSubmit,
@@ -85,15 +84,15 @@ class Form extends Component {
     } = this.props;
     return (
       <FormContext.Provider value={this.formContext}>
-        <form
+        <Form
           {...rest}
           onReset={this.formContext.formApi.reset}
           onSubmit={this.formContext.formApi.submitForm}>
           {this.content}
-        </form>
+        </Form>
       </FormContext.Provider>
     );
   }
 }
 
-export default Form;
+export default InformedForm;
