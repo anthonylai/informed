@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { FormContext } from '../Context';
 import FormController from '../Controller/FormController';
-import Antd from 'antd';
-const AntdForm = Antd.Form;
+// import Antd from 'antd';
+// const AntdForm = Antd.Form;
 
 class Form extends Component {
   constructor(props) {
@@ -85,12 +85,12 @@ class Form extends Component {
     } = this.props;
     return (
       <FormContext.Provider value={this.formContext}>
-        <AntdForm
+        <form
           {...rest}
           onReset={this.formContext.formApi.reset}
           onSubmit={this.formContext.formApi.submitForm}>
           {this.content}
-        </AntdForm>
+        </form>
       </FormContext.Provider>
     );
   }
